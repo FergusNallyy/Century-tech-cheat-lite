@@ -60,8 +60,7 @@ For exact-answer and letter-choice questions, the answer appears in a hint overl
 ## Notes
 
 - The script reads question text from the DOM — it cannot see images directly. For image-heavy questions it falls back to OCR.
-- Letter-choice questions (e.g. "which letter shows where a full stop should go?") are detected automatically and handled separately from typed answers.
-- Drag-and-drop matching uses colour coding to show which item belongs in which slot.
+- Drag-and-drop matching uses colour coding to show which item belongs in which slot. (This is buggy at the moment, I am working on a fix.)
 
 ---
 
