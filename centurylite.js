@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Lightweight auto-solver for Century Tech
-// @author       FunGuy
+// @author       You
 // @match        https://*.century.tech/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=century.tech
 // @grant        GM_xmlhttpRequest
@@ -320,7 +320,7 @@
             data: JSON.stringify({
                model: 'meta-llama/llama-4-scout-17b-16e-instruct',
                messages: [
-                  { role: 'system', content: systemPrompt || 'GCSE expert. Be concise.' },
+                  { role: 'system', content: systemPrompt || 'Exam helper. Reply with ONLY the exact correct option text, nothing else.' },
                   { role: 'user', content: prompt }
                ],
                temperature: 0.2,
@@ -452,8 +452,8 @@
 
       // If the question asks to pick a letter (A/B/C/D), send a cleaner prompt
       const isLetterQuestion = /which letter/i.test(question) ||
-                               /letter \(A/i.test(question) ||
-                               /\(A,?\s*B,?\s*C/i.test(question);
+         /letter \(A/i.test(question) ||
+         /\(A,?\s*B,?\s*C/i.test(question);
 
       const prompt = isLetterQuestion
          ? `${question}\n\nReply with ONLY the single correct letter: A, B, C, or D.`
@@ -817,7 +817,7 @@
                <ol>
                   <li>Go to <a href="https://console.groq.com" target="_blank">console.groq.com</a></li>
                   <li>Click <strong>Sign Up</strong> — it's free</li>
-                  <li>Once logged in, click <strong>API Keys</strong> in the left menu</li>
+                  <li>Once logged in, click <strong>API Keys</strong> in the top right menu</li>
                   <li>Click <strong>Create API Key</strong>, give it any name</li>
                   <li>Copy the key shown (starts with <code>gsk_</code>)</li>
                   <li>Paste it in the box above and click <strong>Save</strong></li>
