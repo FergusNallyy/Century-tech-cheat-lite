@@ -320,7 +320,7 @@
             data: JSON.stringify({
                model: 'meta-llama/llama-4-scout-17b-16e-instruct',
                messages: [
-                  { role: 'system', content: systemPrompt || 'Exam helper. Reply with ONLY the exact correct option text, nothing else.' },
+                  { role: 'system', content: systemPrompt || 'GCSE expert. Be concise.' },
                   { role: 'user', content: prompt }
                ],
                temperature: 0.2,
